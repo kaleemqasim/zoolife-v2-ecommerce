@@ -1,0 +1,273 @@
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+    .posts .owl-nav div {
+        height: 50px;
+        width: 50px;
+        left: -60px;
+        line-height: 50px;
+    }
+    .posts .owl-nav div.owl-next {
+        right: -60px;
+    }
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+    /* header */
+    .header-menu-content{
+        display: none;
+    }
+    .user-action-btn{
+        display: block;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* slider */
+    .slider .owl-nav {
+        left: 40px;
+    }
+    .posts .owl-nav div {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 30px;
+        position: unset;
+        transform: translateY(0px);
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .posts .owl-nav div:last-child{
+        margin-right: 0;
+    }
+    .posts .owl-nav {
+        text-align: center;
+        padding-top: 30px;
+    }
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* header */
+    .header-menu-content{
+        display: none;
+    }
+    .user-action-btn{
+        display: block;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* posts */
+    .posts .owl-nav div {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 30px;
+        position: unset;
+        transform: translateY(0px);
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .posts .owl-nav div:last-child{
+        margin-right: 0;
+    }
+    .posts .owl-nav {
+        text-align: center;
+        padding-top: 30px;
+    }
+    .category-tag {
+        display: block;
+    }
+    .category-tag .tag-item {
+        margin-bottom: 15px;
+    }
+    .app-download img {
+        margin: 0;
+        margin-bottom: 18px;
+    }
+    .user-action-btn nav ul li a {
+        padding: 10px 10px;
+    }
+    .lang-switcher .lang {
+        padding: 10px;
+    }
+    /* popup */
+    .communication-options {
+        display: block;
+    }
+    .communication-options div {
+        margin-bottom: 10px;
+    }
+    /* chat */
+    .chat-opener-btn{
+        opacity: 1;
+        visibility: visible;
+    }
+    .chat-left-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 350px;
+        transform: translateX(-100%);
+        z-index: 99;
+        transition: all .4s cubic-bezier(.7,0,.2,1);
+        -webkit-transition: all .4s cubic-bezier(.7,0,.2,1);
+        -moz-transition: all .4s cubic-bezier(.7,0,.2,1);
+        -ms-transition: all .4s cubic-bezier(.7,0,.2,1);
+        -o-transition: all .4s cubic-bezier(.7,0,.2,1);
+    }
+    .chat-left-sidebar.active {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+    }
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    /* header */
+    .header-menu-content{
+        display: none;
+    }
+    .user-action-btn{
+        display: block;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* service category */
+    .category-tag {
+        display: block;
+    }
+    .category-tag .tag-item {
+        margin-bottom: 15px;
+    }
+    .posts .owl-nav div {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 30px;
+        position: unset;
+        transform: translateY(0px);
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .posts .owl-nav div:last-child{
+        margin-right: 0;
+    }
+    .posts .owl-nav {
+        text-align: center;
+        padding-top: 30px;
+    }
+    .section-title h2 {
+        font-size: 22px;
+    }
+    .see-all-link {
+        font-size: 18px;
+    }
+    .slider-item {
+        height: 75vh;
+    }
+    .slider-content .title {
+        font-size: 26px;
+    }
+    .slider-content .desc {
+        font-size: 16px;
+    }
+    .slider .owl-nav {
+        left: 150px;
+    }
+    /* post details */
+    .description-btn {
+        display: block;
+    }
+    .description-btn .btn {
+        margin-bottom: 15px;
+    }
+    .post-info-box .post-info-list div:first-child {
+        width: 50px;
+    }
+    .post-info-box .post-info-list {
+        font-size: 16px;
+    }
+    /* popup */
+    .communication-options {
+        display: block;
+    }
+    .communication-options div {
+        margin-bottom: 10px;
+    }
+    /* notification */
+    .notification-item {
+        display: block;
+    }
+    .notification-time {
+        text-align: right;
+    }
+    /* chat */
+    .chat-opener-btn{
+        opacity: 1;
+        visibility: visible;
+    }
+    .chat-left-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 350px;
+        transform: translateX(-100%);
+        z-index: 99;
+        transition: all .4s cubic-bezier(.7,0,.2,1);
+        -webkit-transition: all .4s cubic-bezier(.7,0,.2,1);
+        -moz-transition: all .4s cubic-bezier(.7,0,.2,1);
+        -ms-transition: all .4s cubic-bezier(.7,0,.2,1);
+        -o-transition: all .4s cubic-bezier(.7,0,.2,1);
+    }
+    .chat-left-sidebar.active {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+    }
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    
+}
+
+@media (max-width: 425px) {
+    .logo {
+        display: block;
+        text-align: center;
+    }
+    .user-action-btn nav ul li a {
+        padding: 10px 10px;
+    }
+    .lang-switcher .lang {
+        padding: 10px;
+        font-size: 16px;
+    }
+    .lang-switcher .lang>i {
+        margin-left: .5rem;
+    }
+    .logo .brand-logo {
+        margin-bottom: 20px;
+    }
+}

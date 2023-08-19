@@ -50,7 +50,6 @@ class SliderController extends Controller
             $slider->save();
         }
 
-
         return redirect()->route('admin.slider.show')->with('success', 'saved');
     }
 
@@ -59,9 +58,6 @@ class SliderController extends Controller
         $slider = Slider::where('id', '=', $id)->first();
         return view('admin/slider/edit', compact('slider'));
     }
-
-
-
 
     public function update(Request $request, $id)
     {
@@ -127,7 +123,8 @@ class SliderController extends Controller
             $sliders = Slider::where('status', 1)->get();
             $i = 0;
             foreach ($sliders as $slider) {
-                $url = 'https://newzoolifeapi.zoolifeshop.com/uploads/slider/';
+                // $url = 'https://newzoolifeapi.zoolifeshop.com/uploads/slider/';
+                $url = url('uploads/slider'). "/";
                 $data[$i]['id'] = $slider->id;
                 $data[$i]['title'] = $slider->title;
                 $data[$i]['description'] = $slider->description;

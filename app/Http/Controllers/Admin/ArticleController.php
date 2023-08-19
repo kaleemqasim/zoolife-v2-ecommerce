@@ -157,7 +157,7 @@ class ArticleController extends Controller
             $articles = Article::all();
             $i = 0;
             foreach ($articles as $article) {
-                $url = 'https://newzoolifeapi.zoolifeshop.com/uploads/article/';
+                $url = url('uploads/article'). "/";
                 if (!empty($article->image)) {
                     $List = explode(',', $article->image);
                     $data[$i]['image1'] = $url . $List[0];
@@ -205,7 +205,7 @@ class ArticleController extends Controller
             $id = $request['id'];
             $article = Article::find($id);
             if (!empty($article)) {
-                $url = 'https://newzoolifeapi.zoolifeshop.com/uploads/article/';
+                $url = url('uploads/article'). "/";
                 if (!empty($article->image)) {
                     $List = explode(',', $article->image);
                     $data['image1'] = $url . $List[0];

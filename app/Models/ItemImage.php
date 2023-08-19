@@ -16,6 +16,11 @@ class ItemImage extends Model
 
     protected $dates = ['uploaded_on'];
 
+    public function getFileNameAttribute($value)
+    {
+        return !empty($value) ? url('/uploads/ad/' . $value) : '';
+    }
+
     public function item()
     {
         return $this->belongsTo(Item::class);

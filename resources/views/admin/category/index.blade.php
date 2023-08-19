@@ -38,68 +38,39 @@
                             <!--<table id="example1" class="table table-bordered table-striped">`-->
                             <thead>
                                 <tr>
-
-
-
                                     <th>
-
                                         Image
-
                                     </th>
-
                                     <th>
-
                                         Title
-
                                     </th>
                                     <th>
-
                                         English Title
-
                                     </th>
                                     <th>
-
                                         MainCategoryId
-
                                     </th>
                                     <th>
-
                                         priority
-
                                     </th>
-
                                     <th>
-
                                         Action
-
                                     </th>
-
-
                                 </tr>
                             </thead>
                             <tbody>
 
-
-
                                 @foreach($category as $ad)
                                 {{-- {{ dd($category) }} --}}
                                 <!--{{$ad}}-->
-
-
                                 <tr>
-
-
                                     <td>
-                                        <img width="100px" height="100px"
-                                            src="http://newzoolifeapi.zoolifeshop.com/uploads/category/{{$ad->cat_img}}">
-
+                                        <img width="100px" height="100px" src="{{asset('/uploads/category/'.$ad->cat_img)}}">
                                     </td>
                                     <td>{{$ad->arabic_name}}</td>
                                     <td>{{$ad->english_title}}</td>
                                     <td>{{$ad->mainCategoryId}}</td>
                                     <td>{{$ad->priority}}</td>
-
-
                                     <td>
                                         <div class="tools">
                                             <!--<a href="{{route('admin.ads.edit',$ad->id)}}"><i class="fa fa-edit"></i></a>-->

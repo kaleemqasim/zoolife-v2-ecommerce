@@ -175,4 +175,40 @@ class NotificationController extends Controller
         }
         return Response::json($dr);
     }
+    
+    function markNotificationRead(Request $request) {
+        $notificationId = $request->notification_id;
+        $notifi  = DB::table('zoolife_notification')->select()->where('id', '=', $notificationId)->first();
+        if($notifi){
+            $updated = DB::table('zoolife_notification')->where('id', '=', $notificationId)->update(['isread' => 1]);
+            $dr['error'] = false;
+            $dr['status'] = '200';
+            $dr['message'] = 'clear message successful';
+            return Response::json($dr);
+        }else{
+            $dr['error'] = true;
+            $dr['status'] = '101';
+            $dr['message'] = 'No notification exist with this Id';
+            return Response::json($dr);
+        }
+    }
+    
+    function deleteNotification(Request $request) {
+        $notificationId = $request->notification_id;
+        $notifi  = DB::table('zoolife_notification')->select()->where('id', '=', $notificationId)->first();
+        if($notifi){
+            $updated = DB::table('zoolife_notification')->where('id', '=', $notificationId)->delete();
+            if ($updated) {
+                $dr['error'] = false;
+                $dr['status'] = '200';
+                $dr['message'] = 'notification deleted successful';
+                return Response::json($dr);
+            }
+        }else{
+            $dr['error'] = true;
+            $dr['status'] = '101';
+            $dr['message'] = 'No notification exist with this Id';
+            return Response::json($dr);
+        }
+    }
 }

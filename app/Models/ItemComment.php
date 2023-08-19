@@ -15,6 +15,8 @@ class ItemComment extends Model
         'userId',
         'message'
     ];
+    const CREATED_AT = 'co';
+    const UPDATED_AT = 'uo';
 
     protected $dates = [
         'co',

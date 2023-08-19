@@ -50,6 +50,23 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof \Illuminate\Auth\AuthenticationException) {
+            $route = \Request::route()->getName();
+            $pageUrl = url()->Current();
+
+            if ($request->expectsJson()) {
+                $response = [
+                    'code'    => 401,
+                    'message' => __("need_login"),
+                    'result'  => [],
+                ];
+                return response()->json($response);
+            } else if (strpos($pageUrl, 'admin')) {
+                return parent::render($request, $exception);
+            } else {
+                return redirect()->route('home');
+            }
+        }
         return parent::render($request, $exception);
     }
 }

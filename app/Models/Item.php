@@ -54,10 +54,18 @@ class Item extends Model
 
     // protected $hidden = ['user'];
 
+    protected $appends = [
+        'share_url',
+    ];
 
-    // protected $appends = [
-    //     'related_add',
-    // ];
+    public function getShareUrlAttribute()
+    {
+        if ($this->post_type == 'auction') {
+            return !empty($this->id) ? ($this->itemTitle . " " . url('auction/'.$this->id)) : '';
+        } else {
+            return !empty($this->id) ? ($this->itemTitle . " " . url('post/'.$this->id)) : '';
+        }
+    }
 
     public static function boot()
     {
@@ -133,9 +141,14 @@ class Item extends Model
     {
         $relatedads = self::where('category', $this->category)
             ->where('removeAt', '0')
+            ->where('items.id',"!=", $this->id)
             ->limit(6)
             ->get(['id', 'imgUrl', 'city', 'itemTitle', 'created_at'])
             ->makeHidden('related_add');
+
+        foreach ($relatedads as $key => &$item) {
+            $item->imgUrl   = !empty($item->imgUrl) ? url('/uploads/ad/' . $item->imgUrl) : '';
+        }
 
         return $relatedads;
     }
@@ -219,8 +232,6 @@ class Item extends Model
      */
     public static function enableAuctionFeature($request): array
     {
-        $formatizeTime = Carbon::now();
-
         $minBid = (float)$request->min_bid;
         $maxBid = (float)$request->max_bid;
 
@@ -264,6 +275,8 @@ class Item extends Model
             $dr['message'] = trans('messages.invalid_days');
             return $dr;
         }
+
+        $formatizeTime = Carbon::now();
 
         ## add time to time to set expiration date
         if (!empty($request->hours)) {
@@ -312,5 +325,19 @@ class Item extends Model
                 ]);
             }
         }
+    }
+
+    public function getRelatedPost()
+    {
+        $relatedPosts = self::select('items.*', 'u.username as author', 'u.phone')
+                        ->leftjoin('users as u','u.id','fromUserId')
+                        ->where('post_type', $this->post_type)
+                        ->where('category', $this->category)
+                        ->where('items.id',"!=", $this->id)
+                        ->where('removeAt', '0')
+                        ->limit(6)
+                        ->get();
+
+        return $relatedPosts;
     }
 }

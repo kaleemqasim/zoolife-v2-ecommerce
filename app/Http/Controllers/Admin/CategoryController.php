@@ -127,11 +127,9 @@ class CategoryController extends Controller
         if ($category) {
             $i = 0;
             foreach ($category as $article) {
-                if ($article->cat_img) {
-                    $url = 'https://newzoolifeapi.zoolifeshop.com/uploads/category/' . $article->cat_img;
-                } else {
-                    $url = '';
-                }
+
+                $url = ($article->cat_img) ? url('uploads/category/' . $article->cat_img) : "";
+
                 $data[$i]['id'] = $article->id;
                 $data[$i]['mainCategoryId'] = $article->mainCategoryId;
 
@@ -186,16 +184,12 @@ class CategoryController extends Controller
         $dr['status'] = 100;
         $id = $request->category_id;
         $category = Category::where('id', $id)->where('removeAt', 0)->first();
-        // print_r($category);
-        // die();
+
         if ($category) {
             // $cat = $category[0];
             if ($category->mainCategoryId == 0) {
-                if ($category->cat_img) {
-                    $url = 'https://newzoolifeapi.zoolifeshop.com/uploads/category/' . $category->cat_img;
-                } else {
-                    $url = '';
-                }
+                $url = ($category->cat_img) ? url('uploads/category/' . $category->cat_img) : "";
+
                 $data['id'] = $category->id;
                 $data['mainCategoryId'] = $category->mainCategoryId;
                 $data['title'] = $category->title;

